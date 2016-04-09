@@ -107,11 +107,11 @@ a.v:hover {
 }
 
 #eyes {
-	width: 45px;
+	width: 46px;
 	height: 8px;
 	position: absolute;
 	top: 15px;
-	left: 13px;
+	left: 17px;
 }
 
 svg {
