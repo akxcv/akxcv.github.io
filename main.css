@@ -100,6 +100,14 @@ svg {
 	margin: 0 5px;
 }
 
+.transform {
+	-moz-transform: scale(4);
+	-o-transform: scale(4);
+	-ms-transform: scale(4);
+	-webkit-transform: scale(4);
+	transform: scale(4);
+}
+
 @media only screen and (max-width: 414px) {
 	p {
 		font-size: 80px;
@@ -109,5 +117,13 @@ svg {
 	svg {
 		height: 35px;
 		width: 35px;
+	}
+	
+	.transform {
+		-moz-transform: scale(2);
+		-o-transform: scale(2);
+		-ms-transform: scale(2);
+		-webkit-transform: scale(2);
+		transform: scale(2);
 	}
 }
