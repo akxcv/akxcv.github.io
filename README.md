@@ -1,3 +1,3 @@
-# [akxcv](http://akxcv.github.io)
+# [akxcv](http://akxcv.com)
 
 This is it
