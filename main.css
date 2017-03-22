@@ -30,6 +30,7 @@ span {
 
 a {
   text-decoration: none;
+  text-align: center;
   display: inline-block;
   color: black;
   width: 80px;
@@ -75,6 +76,7 @@ a.v:hover {
 
 svg {
   display: block;
+  margin: 0 auto;
   height: 70px;
   width: 70px;
 }
