@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-  background: #f6f5ed;
+  background-color: #f5f5f5;
 }
 
 main {
@@ -22,56 +22,42 @@ main {
 }
 
 span {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Pacifico', cursive;
   font-weight: 100;
-  font-size: 160px;
-  line-height: 140px;
+  font-size: 136px;
+  line-height: 220px;
+}
+
+.link-wrapper {
+  width: 80px;
+  display: inline-block;
 }
 
 a {
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  color: black;
-  width: 80px;
+  color: #333;
+  fill: #333;
+  width: 100px;
 }
 
-a.a:hover {
+a.m:hover {
   color: #4078c0;
   fill: #4078c0;
 }
 
-a.k:hover {
-  color: #597da3;
-  fill: #597da3;
+a.oo:hover {
+  color: #da1593;
+  fill: #da1593;
 }
 
-a.x:hover {
-  color: #125688;
-  fill: #125688;
+a.oo:hover .blue {
+  fill: #0059d4;
 }
 
-a.c:hover {
-  color: #55acee;
-  fill: #55acee;
-}
-
-a.v {
-  position: relative;
-  fill: none;
-}
-
-a.v:hover {
-  color: #cf0303;
-  fill: #cf0303;
-}
-
-#eyes {
-  width: 46px;
-  height: 8px;
-  position: absolute;
-  top: 15px;
-  left: 17px;
+a.oo:hover .red {
+  fill: #da1593;
 }
 
 svg {
@@ -90,13 +76,17 @@ svg {
 }
 
 @media (max-width: 450px) {
+  .link-wrapper {
+    width: 40px;
+  }
+
   a {
-    width: 47px;
+    width: 52px;
   }
 
   span {
-    font-size: 100px;
-    line-height: 100px;
+    font-size: 70px;
+    line-height: 120px;
   }
 
   svg {
@@ -110,9 +100,5 @@ svg {
     -ms-transform: scale(2.5);
     -webkit-transform: scale(2.5);
     transform: scale(2.5);
-  }
-
-  #eyes {
-    display: none;
   }
 }
