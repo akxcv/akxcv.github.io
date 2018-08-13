@@ -75,6 +75,51 @@ svg {
   transform: scale(4.21);
 }
 
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+footer.visible {
+  opacity: 1;
+}
+
+.reaction-button {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  margin: 0 10px;
+  text-align: left;
+  transition: color .15s ease-in-out;
+}
+
+.reaction-button:hover {
+  color: #4078c0;
+}
+
+.reaction-button.active {
+  color: white;
+}
+
+.reaction-button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.reaction-button .reaction-count {
+  font-family: monospace;
+  display: inline-block;
+}
+
 @media (max-width: 450px) {
   .link-wrapper {
     width: 40px;
