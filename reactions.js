@@ -41,7 +41,6 @@
     document.querySelectorAll('.js-reaction').forEach(function (button) {
       var activeTimeout
       function clickListener (e) {
-        e.preventDefault()
         clearTimeout(activeTimeout)
         button.classList.add('active')
         activeTimeout = setTimeout(function () {
@@ -52,7 +51,12 @@
           return reaction + 1
         })
       }
-      button.addEventListener('click', debounce(clickListener, 100))
+      var debouncedClickListener = debounce(clickListener, 100)
+      var fn = function (e) {
+        e.preventDefault()
+        debouncedClickListener()
+      }
+      button.addEventListener('click', fn)
     })
 
     updateReactionCounts(values)

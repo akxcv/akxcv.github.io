@@ -42,21 +42,26 @@ a {
   width: 100px;
 }
 
-a.m:hover {
+a.github:hover {
   color: #4078c0;
   fill: #4078c0;
 }
 
-a.oo:hover {
+a.instagram:hover {
+  color: #597da3;
+  fill: #597da3;
+}
+
+a.flickr:hover {
   color: #da1593;
   fill: #da1593;
 }
 
-a.oo:hover .blue {
+a.flickr:hover .blue {
   fill: #0059d4;
 }
 
-a.oo:hover .red {
+a.flickr:hover .red {
   fill: #da1593;
 }
 
