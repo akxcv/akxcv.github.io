@@ -65,6 +65,16 @@ a.flickr:hover .red {
   fill: #da1593;
 }
 
+a.steam * {
+  color: inherit;
+  fill: inherit;
+}
+
+a.steam:hover {
+  color: #000;
+  fill: #000;
+}
+
 svg {
   display: block;
   margin: 0 auto;
