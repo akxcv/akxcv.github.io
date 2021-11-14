@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.69)), url(assets/Screen01.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: white;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 55px;
+}
+
+article h1 {
+  margin: 50px 0;
+  text-shadow: 3px 3px 2px black;
+}
+
+article p {
+  margin: 5px 0;
+  text-shadow: 3px 3px 2px black;
+}
+
+p {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+a {
+  color: #557aaa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4078c0;
+}
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: white;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  border-radius: 9px;
+  padding: 5px 13px;
+}
+
+.link:hover {
+  background: linear-gradient(rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.5));
+}
+
+.link img {
+  width: 200px;
+}
+
+.link span {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.tmio {
+  font-family: 'Lobster', sans-serif;
+  font-size: 35px;
+  margin: 3px 0;
+  color: white;
+}
