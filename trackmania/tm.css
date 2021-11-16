@@ -49,6 +49,10 @@ p {
   font-size: 20px;
 }
 
+p.small {
+  font-size: 14px;
+}
+
 a {
   color: #557aaa;
   text-decoration: none;
