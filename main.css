@@ -107,6 +107,11 @@ a.steam:hover {
   fill: #000;
 }
 
+a.spotify:hover {
+  color: #1ed760;
+  fill: #1ed760;
+}
+
 svg {
   display: block;
   margin: 0 auto;
