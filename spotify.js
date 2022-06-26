@@ -48,6 +48,8 @@
 
   renderNowPlaying().then(function () {
     body.classList.remove('hidden')
+  }).catch(function () {
+    body.classList.remove('hidden')
   })
 
   setInterval(renderNowPlaying, 3000)
