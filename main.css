@@ -1,3 +1,7 @@
+:root {
+  --fg: #333;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +16,7 @@ body {
   background-color: #f5f5f5;
   font-family: 'Montserrat', sans-serif;
   transition: opacity, color, background-color .4s ease-in-out;
+  color: var(--fg);
 }
 
 body.hidden {
@@ -56,14 +61,12 @@ main {
   flex-direction: column;
   align-items: center;
   transition: color, background-color .4s ease-in-out;
-  background-color: #f5f5f5;
 }
 
 .spotify-now-playing .label {
-  color: #fff;
+  color: var(--fg);
   font-size: 11px;
   margin-bottom: 3px;
-  mix-blend-mode: exclusion;
 }
 
 .spotify-now-playing a {
@@ -84,18 +87,9 @@ main {
   margin-right: 10px;
 }
 
-.dark .spotify-now-playing .track-name {
-  color: #c5c5c5;
-}
-
 .link-wrapper {
   width: 80px;
   display: inline-block;
-}
-
-.dark .link-wrapper a {
-  color: #c5c5c5;
-  fill: #c5c5c5;
 }
 
 h1 {
@@ -121,8 +115,8 @@ a {
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  color: #333;
-  fill: #333;
+  color: var(--fg);
+  fill: var(--fg);
   width: 100px;
 }
 
@@ -206,22 +200,12 @@ footer.visible {
 
 .reaction-button:hover {
   color: #4078c0;
+  mix-blend-mode: exclusion;
 }
 
 .reaction-button.active {
   color: white;
-}
-
-.dark .reaction-button {
-  color: #c5c5c5;
-}
-
-.dark .reaction-button:hover {
-  color: #668ab8;
-}
-
-.dark .reaction-button.active {
-  color: white;
+  mix-blend-mode: exclusion;
 }
 
 .reaction-button img {
