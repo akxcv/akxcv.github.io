@@ -30,9 +30,12 @@
   }
 
   function getPalette(img, ...args) {
-    const [fg, bg] = colorThief.getPalette(img, ...args)
-    return { rgbs: [toRgb(fg), toRgb(bg)], raw: { fg, bg } }
+    const palette = colorThief.getPalette(img, ...args)
+    const [bg, fg] = palette
+    return { palette, rgbs: [toRgb(fg), toRgb(bg)], raw: { fg, bg } }
   }
+
+  let currentSong = null
 
   function renderNowPlaying() {
     return fetch('https://jerry.the418.gg/akxcvapi/spotify/now_playing')
@@ -40,20 +43,31 @@
       .then(function (data) {
         return new Promise((resolve, reject) => {
           if (data.is_playing) {
+            if (currentSong === data.item.id) {
+              return resolve()
+            }
             const img = document.createElement('img')
             img.src = data.item.album.images.find(function (i) { return i.height <= 64 }).url
             img.crossOrigin = "anonymous"
             img.onload = function (_e) {
-              var { rgbs: [fgColor, bgColor], raw: { fg, bg }} = getPalette(img, 2);
+              var { palette, rgbs: [fgColor, bgColor], raw: { fg, bg }} = getPalette(img);
+
+              let i = 2
+              while (contrast(fg, bg) < 3.5) {
+                console.log('low contrast')
+                const prevFg = fg
+                fg = palette[i]
+                if (fg === undefined) {
+                  fg = prevFg
+                  break
+                }
+                fgColor = toRgb(fg)
+                i += 1
+              }
 
               if (contrast(fg, bg) < 3.5) {
                 console.log('low contrast')
-                var { rgbs: [fgColor, bgColor], raw: { fg, bg }} = getPalette(img);
-
-                if (contrast(fg, bg) < 3.5) {
-                  console.log('low contrast')
-                  fgColor = luminance(bg) > 0.5 ? 'black' : 'white'
-                }
+                fgColor = luminance(bg) > 0.5 ? 'black' : 'white'
               }
 
               root.innerHTML =
@@ -65,6 +79,11 @@
               body.style.backgroundColor = bgColor
               styleRoot.style.setProperty("--fg", fgColor)
 
+              palette.forEach(function (color) {
+                console.log('%c ', 'font-size: 32px; border: 2px solid black; background-color: ' + toRgb(color) + ';')
+              })
+              currentSong = data.item.id
+
               resolve()
             }
             img.onerror = reject
@@ -72,6 +91,7 @@
             root.innerHTML = ''
             body.style.backgroundColor = null
             styleRoot.style.setProperty("--fg", "#333")
+            currentSong = null
             resolve()
           }
         })
