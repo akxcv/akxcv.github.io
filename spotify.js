@@ -67,7 +67,7 @@
 
               if (contrast(fg, bg) < 3.5) {
                 console.log('low contrast', { bg, bgColor })
-                fgColor = luminance(bg) > 0.5 ? 'black' : 'white'
+                fgColor = luminance(bg[0], bg[1], bg[2]) > 0.5 ? 'black' : 'white'
               }
 
               root.innerHTML =
